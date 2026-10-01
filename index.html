@@ -1,0 +1,149 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Um convite para Dani ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        width: 90%;
+        max-width: 400px;
+        padding: 35px 25px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #e63956;
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #444;
+    }
+
+    .botoes {
+        margin-top: 30px;
+        position: relative;
+        height: 100px;
+    }
+
+    button {
+        border: none;
+        padding: 14px 30px;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #sim {
+        background: #e63956;
+        color: white;
+    }
+
+    #nao {
+        background: #ddd;
+        color: #333;
+        position: absolute;
+        left: 210px;
+        top: 0;
+    }
+
+    #mensagem {
+        display: none;
+        margin-top: 25px;
+        font-size: 20px;
+        color: #e63956;
+        font-weight: bold;
+        line-height: 1.5;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Dani ❤️</h1>
+
+    <p>
+        Você aceita sair comigo novamente? 👀
+    </p>
+
+    <div class="botoes">
+
+        <button id="sim" onclick="aceitou()">
+            SIM ❤️
+        </button>
+
+        <button id="nao">
+            NÃO 😭
+        </button>
+
+    </div>
+
+    <div id="mensagem">
+        Seu único papel é vir linda. ❤️<br><br>
+        O resto deixa comigo. 😎<br><br>
+        Me fala a data e o horário que você está disponível. 😉
+    </div>
+
+</div>
+
+<script>
+
+const nao = document.getElementById("nao");
+
+function fugir() {
+
+    const largura = window.innerWidth - 120;
+    const altura = window.innerHeight - 80;
+
+    const x = Math.random() * largura;
+    const y = Math.random() * altura;
+
+    nao.style.position = "fixed";
+    nao.style.left = x + "px";
+    nao.style.top = y + "px";
+}
+
+// Computador
+nao.addEventListener("mouseover", fugir);
+
+// Celular
+nao.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    fugir();
+});
+
+function aceitou() {
+
+    document.querySelector(".botoes").style.display = "none";
+
+    document.getElementById("mensagem").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
+```
